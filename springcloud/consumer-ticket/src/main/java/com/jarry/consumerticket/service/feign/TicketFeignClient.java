@@ -3,6 +3,7 @@ package com.jarry.consumerticket.service.feign;
 import com.jarry.consumerticket.service.feign.fallback.ticketfallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @BelongsProject: spring_cloud_demo
@@ -10,9 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @Author: Jarry.Chang
  * @CreateTime: 2019-12-11 17:30
  */
-@FeignClient(value = "provider-ticket",fallback = ticketfallback.class)
+@FeignClient(name = "provider-ticket",fallback = ticketfallback.class)
 public interface TicketFeignClient {
 
     @GetMapping("/ticket")
-    String getTicket(String name);
+    String getTicket(@RequestParam("name")String name);
 }
