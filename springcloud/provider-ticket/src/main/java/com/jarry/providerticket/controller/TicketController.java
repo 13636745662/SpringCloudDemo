@@ -19,7 +19,7 @@ public class TicketController {
     TicketService ticketService;
 
     @GetMapping("/ticket")
-    public String getTicket(){
+    public String getTicket(String name){
         return ticketService.getTicket();
     }
 

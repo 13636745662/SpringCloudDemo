@@ -14,5 +14,5 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface TicketFeignClient {
 
     @GetMapping("/ticket")
-    public String getTicket(String name);
+    String getTicket(String name);
 }
