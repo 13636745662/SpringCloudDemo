@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="consumer-ticket" />
+        <module name="eureka-server" />
+        <module name="provider-ticket" />
+        <module name="zuul-gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="consumer-ticket" target="1.8" />
+      <module name="eureka-server" target="1.8" />
+      <module name="provider-ticket" target="1.8" />
+      <module name="springcloud" target="1.8" />
+      <module name="zuul-gateway" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
