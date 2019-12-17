@@ -1,0 +1,28 @@
+server:
+  port: 8087
+spring:
+  application:
+    name: zuul-gateway
+
+zuul:
+  routes:
+    consumer-ticket:  #这里随便写，路径上也不用
+      path: /zuul/**
+      #url: http://127.0.0.1:8002 #真正的微服务地址，path匹配的请求都转发到这里(或者写serviceId: 应用名APPname)
+      serviceId: consumer-ticket
+    provider-ticket:
+      path: /lalala/**
+      #url: http://127.0.0.1:8001
+      serviceId: provider-ticket
+eureka:
+  client:
+    service-url:
+      defaultZone: http://cjr:123456@127.0.0.1:8761/eureka/
+###因为该应用为服务提供者，是eureka的一个客户端，需要注册到注册中心
+    register-with-eureka: true
+###是否需要从eureka上检索服务
+    fetch-registry: true
+  instance:
+      prefer-ip-address: true #将自己的ip地址注册到Eureka服务中
+      ip-address: 127.0.0.1
+      instance-id: ${spring.application.name}###${server.port} #指定实例 id
