@@ -8,7 +8,18 @@ spring:
       server:
         git:
           uri: https://github.com/13636745662/SpringCloudDemo.git
-          search-paths: /config/master/{application}
+          search-paths: /springcloud/config/master/{application}
 #          username: 13636745662
 #          password:
       label: master
+eureka:
+  instance:
+    prefer-ip-address: true #注册服务时使用服务的ip地址
+    instance-id: ${spring.application.name}###${server.port} #指定实例id
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+###因为该应用为服务提供者，是eureka的一个客户端，需要注册到注册中心
+    register-with-eureka: true
+###是否需要从eureka上检索服务
+    fetch-registry: true

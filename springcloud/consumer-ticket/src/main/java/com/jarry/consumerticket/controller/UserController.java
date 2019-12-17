@@ -2,10 +2,15 @@ package com.jarry.consumerticket.controller;
 
 import com.jarry.consumerticket.service.feign.TicketFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowCallbackHandler;
+import org.springframework.jdbc.core.RowCountCallbackHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import javax.annotation.Resource;
 
 /**
  * @BelongsProject: SpringCloud
@@ -19,7 +24,16 @@ public class UserController {
     TicketFeignClient ticketFeignClient;
 
     @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    @Autowired
     RestTemplate restTemplate;
+
+    @GetMapping("/jdbc")
+    public String jdbc(){
+        String sql = "SELECT * FROM article WHERE ID = 1";
+        return jdbcTemplate.queryForMap(sql).toString();
+    }
 
     @PostMapping("/buy")
 //    @HystrixCommand(fallbackMethod = "buyTicketFallback")
