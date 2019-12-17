@@ -1,6 +1,7 @@
 package com.jarry.consumerticket;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -12,9 +13,10 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableAutoConfiguration
 @EnableFeignClients(basePackages ="com.jarry.consumerticket.service.feign")
 @EnableHystrix
-@ComponentScan(basePackages = {"com.jarry.consumerticket.controller","com.jarry.consumerticket.service.feign.fallback"})
+@ComponentScan(basePackages = {"com.jarry.consumerticket.controller","com.jarry.consumerticket.service.feign.fallback","com.jarry.consumerticket.webConfig"})
 
 public class ConsumerTicketApplication {
 

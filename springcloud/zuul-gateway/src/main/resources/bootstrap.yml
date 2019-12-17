@@ -5,13 +5,15 @@ spring:
     active: dev
   cloud:
     config:
-      label: master
-      name: zuul-gateway
+      name: {application}
+#      uri: http://127.0.0.1:7788/
       profile: dev
-    discovery:
-      enabled: true
-      service-id: microservice-config-server
-
+      retry:
+        initial-interval: 2000
+        max-attempts: 5
+      discovery:
+        enabled: true
+        service-id: microservice-config-server
 eureka:
   client:
     service-url:

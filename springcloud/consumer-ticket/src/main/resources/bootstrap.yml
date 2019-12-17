@@ -6,7 +6,7 @@ spring:
   cloud:
     config:
       name: {application}
-      uri: http://127.0.0.1:7788/
+#      uri: http://127.0.0.1:7788/
       profile: dev
       retry:
         initial-interval: 2000
