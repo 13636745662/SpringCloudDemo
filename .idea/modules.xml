@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/springcloud/config-server/config-server.iml" filepath="$PROJECT_DIR$/springcloud/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud/consumer-ticket/consumer-ticket.iml" filepath="$PROJECT_DIR$/springcloud/consumer-ticket/consumer-ticket.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/springcloud/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud/provider-ticket/provider-ticket.iml" filepath="$PROJECT_DIR$/springcloud/provider-ticket/provider-ticket.iml" />
