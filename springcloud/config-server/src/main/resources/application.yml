@@ -8,8 +8,7 @@ spring:
       server:
         git:
           uri: https://github.com/13636745662/SpringCloudDemo.git
-          search-paths:
-          - myspringcloudconfig
-          username: 13636745662
-          password: 
+          search-paths: /config/master/consumer-ticket
+#          username: 13636745662
+#          password:
       label: master
