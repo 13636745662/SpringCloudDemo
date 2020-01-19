@@ -10,6 +10,7 @@
         <module name="consumer-ticket" />
         <module name="eureka-server" />
         <module name="provider-ticket" />
+        <module name="service-utils" />
         <module name="zuul-gateway" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="consumer-ticket" target="1.8" />
       <module name="eureka-server" target="1.8" />
       <module name="provider-ticket" target="1.8" />
+      <module name="service-utils" target="1.8" />
       <module name="springcloud" target="1.8" />
       <module name="zuul-gateway" target="1.8" />
     </bytecodeTargetLevel>

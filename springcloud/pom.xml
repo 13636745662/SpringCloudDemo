@@ -20,6 +20,7 @@
         <module>eureka-server</module>
         <module>provider-ticket</module>
         <module>zuul-gateway</module>
+        <module>service-utils</module>
     </modules>
 
     <properties>

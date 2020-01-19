@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/springcloud/consumer-ticket/consumer-ticket.iml" filepath="$PROJECT_DIR$/springcloud/consumer-ticket/consumer-ticket.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/springcloud/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud/provider-ticket/provider-ticket.iml" filepath="$PROJECT_DIR$/springcloud/provider-ticket/provider-ticket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud/service-utils/service-utils.iml" filepath="$PROJECT_DIR$/springcloud/service-utils/service-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud/springcloud.iml" filepath="$PROJECT_DIR$/springcloud/springcloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud/zuul-gateway/zuul-gateway.iml" filepath="$PROJECT_DIR$/springcloud/zuul-gateway/zuul-gateway.iml" />
     </modules>

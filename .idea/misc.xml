@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/springcloud/provider-ticket/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud/zuul-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud/service-utils/pom.xml" />
       </list>
     </option>
   </component>
