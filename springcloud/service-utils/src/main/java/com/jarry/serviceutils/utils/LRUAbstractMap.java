@@ -25,7 +25,7 @@ public class LRUAbstractMap extends java.util.AbstractMap {
      * map 最大size
      */
     private final static int MAX_SIZE = 1024 ;
-    private final static ArrayBlockingQueue<Node> QUEUE = new ArrayBlockingQueue<>(MAX_SIZE) ;
+    public final static ArrayBlockingQueue<Node> QUEUE = new ArrayBlockingQueue<>(MAX_SIZE) ;
     /**
      * 默认大小
      */
@@ -45,7 +45,7 @@ public class LRUAbstractMap extends java.util.AbstractMap {
     /**
      * 超时时间
      */
-    private final static Long EXPIRE_TIME = 1L ;
+    private final static Long EXPIRE_TIME = 0L ;
     /**
      * 整个 Map 的大小
      */
@@ -153,7 +153,7 @@ public class LRUAbstractMap extends java.util.AbstractMap {
             sizeDown();
             arrays[index] = null ;
             //移除队列
-            QUEUE.poll();
+//            QUEUE.poll();
             return currentNode ;
         }
         Node nNode = currentNode ;
@@ -164,7 +164,7 @@ public class LRUAbstractMap extends java.util.AbstractMap {
                 nNode.pre.next = nNode.next ;
                 nNode = null ;
                 //移除队列
-                QUEUE.poll();
+//                QUEUE.poll();
                 return nNode;
             }
             nNode = nNode.next ;
@@ -261,23 +261,23 @@ public class LRUAbstractMap extends java.util.AbstractMap {
     private class CheckTimeThread implements Runnable{
         @Override
         public void run() {
-            int i = 0;
+//            int i = 0;
             while (flag){
                 try {
-                    Node node = QUEUE.poll();
+                    Node node = QUEUE.poll(-8,TimeUnit.MILLISECONDS);
                     if (node == null){
 //                        log.debug("I'm polling");
                         continue ;
                     }
                     Long updateTime = node.getUpdateTime() ;
-
+//                    log.info(node.key+"----"+node.val);
 //                    log.info(updateTime - System.currentTimeMillis()+"");
                     if ((System.currentTimeMillis() - updateTime ) >= EXPIRE_TIME){
 
-                        ++i;
+//                        ++i;
 //                        log.debug("del success");
                         remove(node.key) ;
-                        log.info(i+"");
+                        log.info(node.key+"----"+node.val);
 //                        this.wait(400L);
                     }
                 } catch (Exception e) {

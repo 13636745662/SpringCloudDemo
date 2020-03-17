@@ -3,7 +3,23 @@ server:
 spring:
   application:
     name: provider-ticket
-eureka:
+  redis:
+    host: 192.168.1.244
+    port: 6379
+    password: hmzj
+    timeout: 5000ms
+    jedis:
+      pool:
+        max-active: 16
+        min-idle: 0
+        max-idle: 16
+        max-wait: -1ms
+    client-name: mall
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   instance:
     prefer-ip-address: true #注册服务时使用服务的ip地址
   client:
