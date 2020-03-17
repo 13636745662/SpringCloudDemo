@@ -3,3 +3,8 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/mybase?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
     username: root
     password: root
+  rabbitmq: #RabbitMQ相关的配置
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
